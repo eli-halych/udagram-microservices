@@ -1,10 +1,9 @@
-import { Router, Request, Response } from 'express';
+import {Request, Response, Router} from 'express';
 
-import { User } from '../models/User';
+import {User} from '../models/User';
 
 import * as bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
-import { NextFunction } from 'connect';
+import {NextFunction} from 'connect';
 
 import * as EmailValidator from 'email-validator';
 
@@ -12,7 +11,8 @@ const router: Router = Router();
 
 async function generatePassword(plainTextPassword: string): Promise<string> {
     const saltRounds = 10;
-    return await bcrypt.genSalt(saltRounds);
+    const salt = await bcrypt.genSalt(saltRounds);
+    return await bcrypt.hash(plainTextPassword, salt);
 }
 
 async function comparePasswords(plainTextPassword: string, hash: string): Promise<boolean> {

@@ -7,4 +7,4 @@ Tech stack: Angular, Node.js, Express, Typescript, JWT, Bcrypt<br>
 ## Udagram components
 Udagram REST API: [./udagram-rest-api/](./udagram-rest-api/) <br>
 Udagram Frontend: [./udagram-frontend/](./udagram-frontend/) <br>
-Udagram image filtering microservice: [./image-filter-starter-code/](./image-filter/) <br>
+Udagram image filtering microservice: [./image-filtering/](./image-filtering/) <br>

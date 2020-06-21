@@ -2,7 +2,12 @@
 
 <hr>
 
-Submission URL: http://image-filter-dev-dev2.us-east-1.elasticbeanstalk.com/
+Beanstalk URL: http://image-filter-dev-dev2.us-east-1.elasticbeanstalk.com/
+
+Run this to test: 
+```
+http://image-filter-dev-dev2.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://gist.githubusercontent.com/eli-halych/cc09a1582ea147b0dffbf0db56a1523f/raw/dc107f523fdce709116f1e3975359cf9724e621f/udagram-puppy-demo.png
+```
 
 <hr>
 

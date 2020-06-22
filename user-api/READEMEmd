@@ -6,7 +6,7 @@ Base URL: `/users/auth/`
 
 ### Endpoints (relative to the base URL)
 
-##### 1. Register
+##### 1. Registration
 ```
 POST /
 DESCRIPTION:
@@ -26,6 +26,7 @@ RETURN BODY:
     }, 200
 ```
 
+##### 2. Login
 ```
 GET /login
 DESCRIPTION:
@@ -45,6 +46,3 @@ RETURN BODY:
         }
     }
 ```
-
-##### 2. Login
-

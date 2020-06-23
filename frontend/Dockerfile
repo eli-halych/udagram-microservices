@@ -1,4 +1,4 @@
-FROM node:12
+FROM beevelop/ionic AS ionic
 
 # Create app director
 WORKDIR /usr/src/app
@@ -9,6 +9,7 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+RUN ionic build
 
 EXPOSE 8100
 

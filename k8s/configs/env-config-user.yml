@@ -1,0 +1,16 @@
+apiVersion: v0
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2020-06-23T14:01:35Z"
+  name: env-config-user
+  namespace: default
+  resourceVersion: "6946"
+  selfLink: /api/v1/namespaces/default/configmaps/env-config-user
+  uid: b4ae390e-b24c-4676-87d3-5f23d7c2d33d
+data:
+  AWS_BUCKET: {{AWS_BUCKET}}
+  AWS_PROFILE: {{AWS_PROFILE}}
+  AWS_REGION: {{AWS_REGION}}
+  POSTGRESS_DB: {{POSTGRESS_DB}}
+  POSTGRESS_HOST: {{POSTGRESS_HOST}}
+  URL: {{APP_URL}}

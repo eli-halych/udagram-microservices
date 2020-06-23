@@ -15,12 +15,18 @@ before_script:
 
 script:
   - docker --version # print the version for logging
+
   - cd feed-api
   - docker build -t udagram-feed-api .
   - docker tag udagram-feed-api $DOCKER_USERNAME/udagram-feed-api:latest
+
   - cd ../user-api
   - docker build -t udagram-user-api .
   - docker tag udagram-user-api $DOCKER_USERNAME/udagram-user-api:latest
+
+  - cd ../frontend
+  - docker build -t udagram-frontend .
+  - docker tag udagram-frontend $DOCKER_USERNAME/udagram-frontend:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin

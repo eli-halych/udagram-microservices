@@ -10,7 +10,7 @@
 			"name": "Public",
 			"item": [
 				{
-					"name": "/api/v0/feed",
+					"name": "/feed",
 					"event": [
 						{
 							"listen": "test",
@@ -38,13 +38,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/v0/feed",
+							"raw": "{{host}}/feed",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"feed"
 							]
 						},
@@ -53,7 +51,7 @@
 					"response": []
 				},
 				{
-					"name": "/api/v0/feed/:id",
+					"name": "/feed/:id",
 					"event": [
 						{
 							"listen": "test",
@@ -81,13 +79,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/v0/feed/:id",
+							"raw": "{{host}}/feed/:id",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"feed",
 								":id"
 							],
@@ -101,7 +97,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "3"
+									"value": "3",
+									"type": "string"
 								}
 							]
 						},
@@ -180,7 +177,7 @@
 			"name": "Unauthorized",
 			"item": [
 				{
-					"name": "/api/v0/feed unauthorized",
+					"name": "/feed unauthorized",
 					"event": [
 						{
 							"listen": "test",
@@ -204,16 +201,17 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/feed",
+							"raw": "{{host}}/feed",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"feed"
 							]
 						},
@@ -228,7 +226,7 @@
 			"name": "Authorized",
 			"item": [
 				{
-					"name": "/api/v0/feed invalid",
+					"name": "/feed invalid",
 					"event": [
 						{
 							"listen": "test",
@@ -264,16 +262,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{}"
+							"raw": "{}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/feed",
+							"raw": "{{host}}/feed",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"feed"
 							]
 						},
@@ -282,7 +281,7 @@
 					"response": []
 				},
 				{
-					"name": "/api/v0/feed authorized Copy",
+					"name": "/feed authorized Copy",
 					"event": [
 						{
 							"listen": "test",
@@ -318,16 +317,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"caption\": \"Hello\",\n    \"url\": \"test.jpg\"\n}"
+							"raw": "{\n    \"caption\": \"Hello\",\n    \"url\": \"test.jpg\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/feed",
+							"raw": "{{host}}/feed",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"feed"
 							]
 						},
@@ -395,7 +395,7 @@
 	],
 	"variable": [
 		{
-			"id": "7872a60e-b8d7-46bd-bdf9-2dce378ce841",
+			"id": "45220d6f-f17a-49a9-91b6-0818d20dcf8a",
 			"key": "host",
 			"value": "http://localhost:8081"
 		}

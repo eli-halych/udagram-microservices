@@ -25,3 +25,52 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
+            
+          env:
+            - name: URL
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config-feed
+                  key: URL
+            - name: AWS_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config-feed
+                  key: AWS_BUCKET
+            - name: AWS_PROFILE
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config-feed
+                  key: AWS_PROFILE
+            - name: AWS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config-feed
+                  key: AWS_REGION
+            - name: POSTGRESS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config-feed
+                  key: POSTGRESS_HOST
+            - name: POSTGRESS_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config-feed
+                  key: POSTGRESS_DB
+
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: secret-jwt
+                  key: JWT_SECRET
+
+            - name: POSTGRESS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret-db-feed
+                  key: POSTGRESS_PASSWORD
+            - name: POSTGRESS_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: secret-db-feed
+                  key: POSTGRESS_USERNAME

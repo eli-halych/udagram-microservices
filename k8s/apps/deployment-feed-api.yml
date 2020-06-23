@@ -5,7 +5,7 @@ metadata:
   labels:
     app: feed-api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: feed-api
@@ -19,12 +19,6 @@ spec:
           image: 64523739/udagram-feed-api
           ports:
             - containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /feed
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
             
           env:
             - name: URL
@@ -47,16 +41,21 @@ spec:
                 configMapKeyRef:
                   name: env-config-feed
                   key: AWS_REGION
-            - name: POSTGRESS_HOST
+            - name: POSTGRES_HOST
               valueFrom:
                 configMapKeyRef:
                   name: env-config-feed
-                  key: POSTGRESS_HOST
-            - name: POSTGRESS_DB
+                  key: POSTGRES_HOST
+            - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
                   name: env-config-feed
-                  key: POSTGRESS_DB
+                  key: POSTGRES_DB
+            - name: PORT
+                valueFrom:
+                  configMapKeyRef:
+                    name: env-config-feed
+                    key: PORT
 
             - name: JWT_SECRET
               valueFrom:
@@ -64,13 +63,13 @@ spec:
                   name: secret-jwt
                   key: JWT_SECRET
 
-            - name: POSTGRESS_PASSWORD
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: secret-db-feed
-                  key: POSTGRESS_PASSWORD
-            - name: POSTGRESS_USERNAME
+                  key: POSTGRES_PASSWORD
+            - name: POSTGRES_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: secret-db-feed
-                  key: POSTGRESS_USERNAME
+                  key: POSTGRES_USERNAME

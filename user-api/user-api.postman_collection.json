@@ -10,7 +10,7 @@
 			"name": "Public",
 			"item": [
 				{
-					"name": "/api/v0/user/auth valid registration",
+					"name": "/user/auth valid registration",
 					"event": [
 						{
 							"listen": "test",
@@ -46,16 +46,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\":\"hello@gmail.com\",\n\t\"password\":\"fancypass\"\n}"
+							"raw": "{\n\t\"email\":\"hello@gmail.com\",\n\t\"password\":\"fancypass\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/users/auth",
+							"raw": "{{host}}/users/auth",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"users",
 								"auth"
 							]
@@ -64,7 +65,7 @@
 					"response": []
 				},
 				{
-					"name": "/api/v0/user/auth invalid registration",
+					"name": "/user/auth invalid registration",
 					"event": [
 						{
 							"listen": "test",
@@ -95,22 +96,23 @@
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"password\": \"fancypass\"\n}"
+							"raw": "{\n    \"password\": \"fancypass\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/users/auth",
+							"raw": "{{host}}/users/auth",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"users",
 								"auth"
 							]
@@ -119,7 +121,7 @@
 					"response": []
 				},
 				{
-					"name": "/api/v0/user/auth/login valid",
+					"name": "/user/auth/login valid",
 					"event": [
 						{
 							"listen": "test",
@@ -153,22 +155,23 @@
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\":\"hello@gmail.com\",\n\t\"password\":\"fancypass\"\n}"
+							"raw": "{\n\t\"email\":\"hello@gmail.com\",\n\t\"password\":\"fancypass\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/users/auth/login",
+							"raw": "{{host}}/users/auth/login",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"users",
 								"auth",
 								"login"
@@ -178,7 +181,7 @@
 					"response": []
 				},
 				{
-					"name": "/api/v0/user/auth/login invalid",
+					"name": "/user/auth/login invalid",
 					"event": [
 						{
 							"listen": "test",
@@ -209,22 +212,23 @@
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{}"
+							"raw": "{}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/users/auth/login",
+							"raw": "{{host}}/users/auth/login",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
-								"v0",
 								"users",
 								"auth",
 								"login"
@@ -261,9 +265,9 @@
 	],
 	"variable": [
 		{
-			"id": "d783d0ae-b95d-484a-9f56-34a4e8e001a1",
+			"id": "583f9298-91cc-4552-a3c1-92f15f662461",
 			"key": "host",
-			"value": "http://localhost:8080"
+			"value": "http://localhost:8082"
 		}
 	],
 	"protocolProfileBehavior": {}

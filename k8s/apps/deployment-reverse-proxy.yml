@@ -5,7 +5,7 @@ metadata:
     service: reverse-proxy
   name: reverse-proxy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: reverse-proxy

@@ -52,10 +52,10 @@ spec:
                   name: env-config-feed
                   key: POSTGRES_DB
             - name: PORT
-                valueFrom:
-                  configMapKeyRef:
-                    name: env-config-feed
-                    key: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config-feed
+                  key: PORT
 
             - name: JWT_SECRET
               valueFrom:

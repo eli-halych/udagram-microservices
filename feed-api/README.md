@@ -1,5 +1,5 @@
 ## Feed microservice for Udagram
-This microservice is designed to handle user-related requests 
+This microservice is designed to handle feed-related requests 
 and acts as a separate backend API with a separate database instance.
 
 Base URL: `/feed/`

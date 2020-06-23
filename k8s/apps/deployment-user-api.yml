@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-api
+  labels:
+    app: user-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-api
+  template:
+    metadata:
+      labels:
+        app: user-api
+    spec:
+      containers:
+        - name: udagram-feed-api
+          image: 64523739/udagram-user-api
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /users
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
